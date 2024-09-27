@@ -19,7 +19,7 @@ func setMemory(mfs []*io_prometheus_client.MetricFamily) {
 				(*Memory).Free = *m.Gauge.Value
 			}
 			if *mf.Name == "node_memory_MemTotal_bytes" {
-				(*Memory).Free = *m.Gauge.Value
+				(*Memory).Total = *m.Gauge.Value
 			}
 		}
 	}

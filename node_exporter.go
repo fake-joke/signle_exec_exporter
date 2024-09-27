@@ -14,20 +14,26 @@
 package main
 
 import (
+	"bytes"
+	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"go_collector/collector"
 	"go_collector/handle"
 	diskHandle "go_collector/handle/disk"
 	"go_collector/utils"
+	"io"
+	"net/http"
 	_ "net/http/pprof"
 	"os"
 	"os/user"
 	"runtime"
 	"sort"
+	"time"
 
 	"github.com/alecthomas/kingpin/v2"
 	"github.com/go-kit/log/level"
+	"github.com/joho/godotenv"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/common/promlog"
 	"github.com/prometheus/common/promlog/flag"
@@ -47,6 +53,13 @@ var filters = []string{
 	"netdev",
 	"loadavg",
 	"hwmon",
+}
+
+type CollectDataStruct struct {
+	Memory  handle.MemoryStruct                `json:"memory"`
+	CPUs    handle.CPUInfoStruct               `json:"cpus"`
+	Disks   []diskHandle.DiskInfo              `json:"disks"`
+	Network map[string]*handle.InterfaceStruct `json:"network"`
 }
 
 func main() {
@@ -149,17 +162,26 @@ func main() {
 
 		handle.HandleCPU(r)
 		handle.HandleMemory(r)
-		diskHandle.GetInfo()
+		handle.HandleNetwork(r)
 
-		// jsonStr, err := json.MarshalIndent(result, "", " ")
-		// if err != nil {
-		// 	fmt.Println("Error converting to JSON:", err)
-		// 	os.Exit(1)
+		// var collectData = CollectDataStruct{
+		// 	Memory:  *handle.Memory,
+		// 	CPUs:    handle.CPUInfo,
+		// 	Network: handle.Network,
+		// 	Disks:   diskHandle.GetInfo(),
 		// }
-		// fmt.Println(string(jsonStr))
 
-		// 打开文件（如果不存在则创建，如果存在则截断）
-		file, err := os.OpenFile("system_metrics.json", os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
+		jsonFile, _ := os.Open("collect_data.json")
+		defer jsonFile.Close()
+		byteValue, _ := io.ReadAll(jsonFile)
+
+		var collectData = CollectDataStruct{}
+
+		json.Unmarshal(byteValue, &collectData)
+
+		sendData(collectData)
+
+		file, err := os.OpenFile("collect_data.json", os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
 		if err != nil {
 			fmt.Println("Error opening file:", err)
 			os.Exit(1)
@@ -169,11 +191,68 @@ func main() {
 		// 将数据写入 JSON 文件
 		encoder := json.NewEncoder(file)
 		encoder.SetIndent("", "  ")
-		if err := encoder.Encode(result); err != nil {
+		if err := encoder.Encode(collectData); err != nil {
 			fmt.Println("Error encoding JSON:", err)
 			os.Exit(1)
 		}
 
-		fmt.Println("Memory metrics have been written to system_metrics.json")
+		fmt.Println("Memory metrics have been written to collect_data.json")
+
+		// jsonStr, err := json.MarshalIndent(result, "", " ")
+		// if err != nil {
+		// 	fmt.Println("Error converting to JSON:", err)
+		// 	os.Exit(1)
+		// }
+		// fmt.Println(string(jsonStr))
+
+		// 打开文件（如果不存在则创建，如果存在则截断）
 	}
+}
+
+func sendData(data CollectDataStruct) {
+	// 加载.env文件
+	err := godotenv.Load()
+	if err != nil {
+		fmt.Println("Error loading .env file")
+	}
+
+	// url := "http://192.168.88.107:9502"
+	// 从环境变量中获取host
+	url := os.Getenv("HOST")
+	fmt.Println("url:", url)
+
+	jsonData, err := json.Marshal(data)
+	if err != nil {
+		panic(err)
+	}
+	utils.Log().Info("send_data:%+v", data)
+
+	tlsConfig := &tls.Config{
+		InsecureSkipVerify: true, // 忽略证书验证
+	}
+
+	transport := &http.Transport{
+		TLSClientConfig: tlsConfig,
+	}
+
+	client := &http.Client{
+		Transport: transport,
+	}
+
+	resp, err := client.Post(url, "application/json", bytes.NewBuffer(jsonData))
+	if err != nil {
+		fmt.Println("Failed to send data:", err)
+		return
+	}
+	defer resp.Body.Close()
+
+	// 获取响应内容
+	respData, err := io.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("Failed to read response:", err)
+		return
+	}
+	currentTime := time.Now()
+	formattedTime := currentTime.Format("2006-01-02 15:04:05")
+	fmt.Println(formattedTime+", Response:", string(respData))
 }
