@@ -80,6 +80,8 @@ func getDiskInfo(path string, args ...string) DiskInfo {
 	output, err := bin.RunCommand("smartctl", args...)
 	if err != nil {
 		fmt.Println("getDiskInfo err:", err.Error())
+	} else {
+		fmt.Printf("disk_info:%v\n", string(output))
 	}
 
 	var diskInfo DiskInfo

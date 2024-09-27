@@ -1,0 +1,25 @@
+{
+  "usage": [
+    {
+      "cpu": "0",
+      "value": "0.41",
+      "sensor": ""
+    },
+    {
+      "cpu": "1",
+      "value": "0.38",
+      "sensor": ""
+    },
+    {
+      "cpu": "2",
+      "value": "0.38",
+      "sensor": ""
+    },
+    {
+      "cpu": "3",
+      "value": "0.44",
+      "sensor": ""
+    }
+  ],
+  "temperature": []
+}

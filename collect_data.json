@@ -1,0 +1,478 @@
+{
+  "memory": {
+    "total": 67415924736,
+    "free": 64415924000
+  },
+  "cpus": {
+    "usage": [
+      {
+        "cpu": "29",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "49",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "10",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "16",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "33",
+        "value": "0.01",
+        "sensor": ""
+      },
+      {
+        "cpu": "6",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "9",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "15",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "39",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "43",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "53",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "55",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "14",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "18",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "35",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "38",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "46",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "51",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "12",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "24",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "4",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "0",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "11",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "40",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "8",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "19",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "37",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "41",
+        "value": "0.01",
+        "sensor": ""
+      },
+      {
+        "cpu": "42",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "5",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "50",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "52",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "2",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "27",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "20",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "25",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "26",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "32",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "45",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "54",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "1",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "22",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "28",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "30",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "31",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "47",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "17",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "3",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "44",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "36",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "48",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "13",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "23",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "34",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "21",
+        "value": "0.00",
+        "sensor": ""
+      },
+      {
+        "cpu": "7",
+        "value": "0.00",
+        "sensor": ""
+      }
+    ],
+    "temperature": [
+      {
+        "cpu": "0_11",
+        "value": "20.00",
+        "sensor": "0_temp12"
+      },
+      {
+        "cpu": "0_8",
+        "value": "21.00",
+        "sensor": "0_temp9"
+      },
+      {
+        "cpu": "0_0",
+        "value": "21.00",
+        "sensor": "0_temp2"
+      },
+      {
+        "cpu": "1_3",
+        "value": "16.00",
+        "sensor": "1_temp5"
+      },
+      {
+        "cpu": "1_5",
+        "value": "15.00",
+        "sensor": "1_temp7"
+      },
+      {
+        "cpu": "0_10",
+        "value": "20.00",
+        "sensor": "0_temp11"
+      },
+      {
+        "cpu": "0_9",
+        "value": "20.00",
+        "sensor": "0_temp10"
+      },
+      {
+        "cpu": "1_13",
+        "value": "15.00",
+        "sensor": "1_temp14"
+      },
+      {
+        "cpu": "0_13",
+        "value": "21.00",
+        "sensor": "0_temp14"
+      },
+      {
+        "cpu": "1_14",
+        "value": "16.00",
+        "sensor": "1_temp15"
+      },
+      {
+        "cpu": "1_6",
+        "value": "17.00",
+        "sensor": "1_temp8"
+      },
+      {
+        "cpu": "1_9",
+        "value": "15.00",
+        "sensor": "1_temp10"
+      },
+      {
+        "cpu": "0_12",
+        "value": "20.00",
+        "sensor": "0_temp13"
+      },
+      {
+        "cpu": "0_5",
+        "value": "21.00",
+        "sensor": "0_temp7"
+      },
+      {
+        "cpu": "1_8",
+        "value": "17.00",
+        "sensor": "1_temp9"
+      },
+      {
+        "cpu": "1_0",
+        "value": "16.00",
+        "sensor": "1_temp2"
+      },
+      {
+        "cpu": "1_4",
+        "value": "15.00",
+        "sensor": "1_temp6"
+      },
+      {
+        "cpu": "1_1",
+        "value": "16.00",
+        "sensor": "1_temp3"
+      },
+      {
+        "cpu": "0_1",
+        "value": "21.00",
+        "sensor": "0_temp3"
+      },
+      {
+        "cpu": "0_3",
+        "value": "21.00",
+        "sensor": "0_temp5"
+      },
+      {
+        "cpu": "0_6",
+        "value": "20.00",
+        "sensor": "0_temp8"
+      },
+      {
+        "cpu": "1_10",
+        "value": "15.00",
+        "sensor": "1_temp11"
+      },
+      {
+        "cpu": "1_11",
+        "value": "16.00",
+        "sensor": "1_temp12"
+      },
+      {
+        "cpu": "1_12",
+        "value": "15.00",
+        "sensor": "1_temp13"
+      },
+      {
+        "cpu": "1_2",
+        "value": "16.00",
+        "sensor": "1_temp4"
+      },
+      {
+        "cpu": "0_14",
+        "value": "20.00",
+        "sensor": "0_temp15"
+      },
+      {
+        "cpu": "0_2",
+        "value": "20.00",
+        "sensor": "0_temp4"
+      },
+      {
+        "cpu": "0_4",
+        "value": "22.00",
+        "sensor": "0_temp6"
+      }
+    ]
+  },
+  "disks": [
+    {
+      "model_name": "Samsung SSD 860 QVO 1TB",
+      "smart_status": {
+        "passed": true
+      },
+      "user_capacity": {
+        "blocks": 1953525168,
+        "bytes": 1000204886016
+      },
+      "temperature": {
+        "current": 18
+      },
+      "power_on_time": {
+        "hours": 23858
+      },
+      "serial_number": "S4CZNG0M159928Y",
+      "rotation_rate": 0,
+      "device": {
+        "name": "/dev/sda",
+        "info_name": "/dev/sda [SAT]",
+        "type": "sat",
+        "protocol": "ATA"
+      },
+      "seta_version": {
+        "string": "",
+        "value": 0
+      },
+      "scsi_vendor": "",
+      "ModelType": "SATA hdd"
+    }
+  ],
+  "network": {
+    "eth0": {
+      "receive": 75647515,
+      "transmit": 11348262
+    },
+    "eth1": {
+      "receive": 0,
+      "transmit": 0
+    },
+    "lo": {
+      "receive": 83,
+      "transmit": 83
+    }
+  }
+}
