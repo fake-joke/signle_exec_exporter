@@ -164,20 +164,20 @@ func main() {
 		handle.HandleMemory(r)
 		handle.HandleNetwork(r)
 
-		// var collectData = CollectDataStruct{
-		// 	Memory:  *handle.Memory,
-		// 	CPUs:    handle.CPUInfo,
-		// 	Network: handle.Network,
-		// 	Disks:   diskHandle.GetInfo(),
-		// }
+		var collectData = CollectDataStruct{
+			Memory:  *handle.Memory,
+			CPUs:    handle.CPUInfo,
+			Network: handle.Network,
+			Disks:   diskHandle.GetInfo(),
+		}
 
-		jsonFile, _ := os.Open("collect_data.json")
-		defer jsonFile.Close()
-		byteValue, _ := io.ReadAll(jsonFile)
+		// jsonFile, _ := os.Open("collect_data.json")
+		// defer jsonFile.Close()
+		// byteValue, _ := io.ReadAll(jsonFile)
 
-		var collectData = CollectDataStruct{}
+		// var collectData = CollectDataStruct{}
 
-		json.Unmarshal(byteValue, &collectData)
+		// json.Unmarshal(byteValue, &collectData)
 
 		sendData(collectData)
 
