@@ -164,48 +164,39 @@ func main() {
 		handle.HandleMemory(r)
 		handle.HandleNetwork(r)
 
-		var collectData = CollectDataStruct{
-			Memory:  *handle.Memory,
-			CPUs:    handle.CPUInfo,
-			Network: handle.Network,
-			Disks:   diskHandle.GetInfo(),
-		}
+		// var collectData = CollectDataStruct{
+		// 	Memory:  *handle.Memory,
+		// 	CPUs:    handle.CPUInfo,
+		// 	Network: handle.Network,
+		// 	Disks:   diskHandle.GetInfo(),
+		// }
 
-		// jsonFile, _ := os.Open("collect_data.json")
-		// defer jsonFile.Close()
-		// byteValue, _ := io.ReadAll(jsonFile)
+		jsonFile, _ := os.Open("collect_data.json")
+		defer jsonFile.Close()
+		byteValue, _ := io.ReadAll(jsonFile)
 
-		// var collectData = CollectDataStruct{}
+		var collectData = CollectDataStruct{}
 
-		// json.Unmarshal(byteValue, &collectData)
+		json.Unmarshal(byteValue, &collectData)
 
 		sendData(collectData)
 
-		file, err := os.OpenFile("collect_data.json", os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
-		if err != nil {
-			fmt.Println("Error opening file:", err)
-			os.Exit(1)
-		}
-		defer file.Close()
-
-		// 将数据写入 JSON 文件
-		encoder := json.NewEncoder(file)
-		encoder.SetIndent("", "  ")
-		if err := encoder.Encode(collectData); err != nil {
-			fmt.Println("Error encoding JSON:", err)
-			os.Exit(1)
-		}
-
-		fmt.Println("Memory metrics have been written to collect_data.json")
-
-		// jsonStr, err := json.MarshalIndent(result, "", " ")
+		// file, err := os.OpenFile("collect_data.json", os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
 		// if err != nil {
-		// 	fmt.Println("Error converting to JSON:", err)
+		// 	fmt.Println("Error opening file:", err)
 		// 	os.Exit(1)
 		// }
-		// fmt.Println(string(jsonStr))
+		// defer file.Close()
 
-		// 打开文件（如果不存在则创建，如果存在则截断）
+		// // 将数据写入 JSON 文件
+		// encoder := json.NewEncoder(file)
+		// encoder.SetIndent("", "  ")
+		// if err := encoder.Encode(collectData); err != nil {
+		// 	fmt.Println("Error encoding JSON:", err)
+		// 	os.Exit(1)
+		// }
+
+		// fmt.Println("Memory metrics have been written to collect_data.json")
 	}
 }
 
